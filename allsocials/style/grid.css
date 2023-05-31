@@ -1,0 +1,66 @@
+:root{
+  --main-radius:5px;
+  --main-padding:5px;
+}
+
+.grid{
+  display: grid;
+  height:100vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 25vh);
+  grid-template-areas: 
+  "nav nav nav nav nav"
+  "main main main kando kando"
+  "main main main kando kando"
+  "ic ic ic ic ic"
+  "footer footer footer footer";
+  grid-gap: 0.2rem; 
+}
+nav{
+  background-color: aqua;
+  grid-area: nav;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  font-family: "Inter", sans-serif;
+  
+}
+main{
+  background-color: azure;
+  grid-area: main;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+#kando{
+  background-color: black;
+  grid-area: kando;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+#ic{
+  background-color: brown;
+  grid-area: content1;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+footer{
+  background-color: blanchedalmond;
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width: 550px) {
+  .container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1,2fr 1fr;
+    grid-template-areas: 
+    "nav"
+    "sidebar"
+    "main"
+    "content1"
+    "content2"
+    "content3"
+    "footer";
+  }
+}
